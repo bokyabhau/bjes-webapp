@@ -1,6 +1,6 @@
 import * as React from 'react';
 import LinearProgress from '@mui/material/LinearProgress';
-import { Outlet, useLocation, useParams, matchPath } from 'react-router';
+import { Outlet, useLocation, useParams, matchPath, Navigate } from 'react-router';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { PageContainer } from '@toolpad/core/PageContainer';
 import { Account } from '@toolpad/core/Account';
@@ -35,7 +35,6 @@ export default function Layout() {
   }, [location.pathname, employeeId]);
 
   const { session, loading } = useSession();
-  const location = useLocation();
 
   if (loading) {
     return (
